@@ -58,9 +58,23 @@ The add function follows TDD principles:
 ## 📂 Project Structure
 ```sh
 tdd-string-calculator/
-├── __tests__/             # Jest test files
-│   ├── calculator.test.js
+├── calculator.test.js	   # Jest test files
 ├── calculator.js          # String calculator function
+├── index.js          	   # Added some implementation for clarity
 ├── package.json           # Dependencies & scripts
 ├── .gitignore             # Ignored files for Git
 └── README.md              # Project documentation
+```
+## 📝 Understanding index.js
+The index.js file is the entry point of the project. It imports the add function from calculator.js and runs sample calculations:
+```sh
+const add = require("./calculator");
+console.log(add("1,2,3")); // Output: 6
+console.log(add("//;\n1;2")); // Output: 3
+console.log(add("1001,2")); // Output: 2 (ignores 1001)
+```
+## Expected Output
+```sh
+6
+3
+2
